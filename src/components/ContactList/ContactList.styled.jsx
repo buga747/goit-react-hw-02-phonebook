@@ -12,26 +12,8 @@ export const List = styled.ul`
     flex-direction: column;
     gap: 8px;
     padding: 8px;
-    align-items: center;
-
+    margin-left: 20px;
 `
 
-export const Wrapper = styled.div`
-    display: flex;
-    gap: 4px;
-`
 
-export const Button = styled.button`
-    cursor: pointer;
-    background-color: inherit;
-    border: none;
 
-    svg {
-        color: red;
-    }
-`
-
-export const Text = styled.p`
-    margin: 0;
-    padding: 4px;
-`

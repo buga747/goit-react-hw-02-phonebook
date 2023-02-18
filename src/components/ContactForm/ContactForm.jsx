@@ -31,7 +31,8 @@ handleChange = event => {
         const { name, number } = this.state;
         return (
         <Form onSubmit={this.handleSubmit}>
-           <Label> <LabelName>Name</LabelName>
+            <Label>
+              <LabelName>Name</LabelName>
              <Input
               type="text"
               name="name"

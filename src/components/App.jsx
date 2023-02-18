@@ -16,11 +16,11 @@ class App extends Component {
   }
 
   addContact = (name, number) => {
-
     if (this.state.contacts.find(contact => contact.name === name)) {
       alert(`${name} is already in contacts`)
     }
-        const newContact = {id: nanoid(), name, number};
+    
+    const newContact = { id: nanoid(), name, number };
       this.setState(prevState => ({
         contacts: [...prevState.contacts, newContact]
       }));
@@ -33,11 +33,11 @@ class App extends Component {
   
     getVisibleContacts = () => {
     const { filter, contacts } = this.state;
-    const normalizedFilter = filter.toLowerCase();
     return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalizedFilter)
+      contact.name.toLowerCase().includes(filter.toLowerCase())
     );
   };
+
 
    deleteContact = contactId => {
     this.setState(prevState => ({

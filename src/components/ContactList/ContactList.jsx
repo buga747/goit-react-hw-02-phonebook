@@ -1,16 +1,15 @@
 import PropTypes from 'prop-types';
-import { List, Wrapper, Button, ListWrapper, Text} from "./ContactList.styled";
-import { AiFillDelete } from 'react-icons/ai';
+import { List, ListWrapper, } from "./ContactList.styled";
+import Contact from 'components/Contact';
 
 const ContactList = ({ contacts, deleteUser}) => {
     return (
         <ListWrapper>
         <List>
             {contacts.map(({ id, name, number }) =>
-               <li key={id} >
-        <Wrapper>
-            <Text>{name}: <span>{number}</span></Text>
-            <Button id={id} onClick={()=>{deleteUser(id)}} type="button"><AiFillDelete /></Button></Wrapper></li>
+                <li key={id} >
+                    <Contact id={id} name={name} number={number} deleteUser={deleteUser} />
+                </li>
            )}
             </List>
             </ListWrapper>
@@ -19,11 +18,7 @@ const ContactList = ({ contacts, deleteUser}) => {
 
 ContactList.propTypes = {
     deleteUser: PropTypes.func.isRequired,
-    contacts: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    number: PropTypes.string.isRequired,
-  })).isRequired,
+    contacts: PropTypes.array.isRequired,
 }
 
 
