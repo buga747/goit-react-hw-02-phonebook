@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import 'modern-normalize'
 
 export const Wrapper = styled.div`
     display: flex;
@@ -10,9 +11,14 @@ export const Button = styled.button`
     background-color: inherit;
     border: none;
     margin-left: auto;
+    border-radius: 50%;
 
+
+    :hover {
+        background-color: grey;
+    }
     svg {
-        color: red;
+        color: black;
     }
 `
 

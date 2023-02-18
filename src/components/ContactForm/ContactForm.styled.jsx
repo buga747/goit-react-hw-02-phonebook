@@ -39,19 +39,3 @@ export const Button = styled.button`
   background-color: #45a049;
 }
 `
-
-
-// button {
-//   background-color: #4CAF50;
-//   color: white;
-//   padding: 10px 20px;
-//   border: none;
-//   border-radius: 4px;
-//   cursor: pointer;
-//   font-size: 16px;
-//   margin-top: 10px;
-// }
-
-// button:hover {
-//   background-color: #45a049;
-// }
