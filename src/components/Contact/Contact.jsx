@@ -5,7 +5,7 @@ import { Wrapper, Button, Text } from './Contact.styled';
 
 const Contact = ({id, name, number, deleteUser}) => {
     return <Wrapper>
-            <Text>{name}: <span><a href="tel:{number}">{number}</a></span></Text>
+            <Text>{name}: <span><a href={"tel:" + number}>{number}</a></span></Text>
             <Button id={id}
             onClick={() => { deleteUser(id) }}
             title="Delete contact"
