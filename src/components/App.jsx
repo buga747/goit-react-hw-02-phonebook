@@ -27,14 +27,15 @@ class App extends Component {
   }
     
   handleChange = (event) => {
-  const { name, value } = event.target;
+  const { name, value } = event.currentTarget;
   this.setState({ [name]: value });
   };
   
-    getVisibleContacts = () => {
-    const { filter, contacts } = this.state;
+    getFilteredContacts = () => {
+      const { filter, contacts } = this.state;
+      const normalizedFilter = filter.toLowerCase();
     return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(filter.toLowerCase())
+      contact.name.toLowerCase().includes(normalizedFilter)
     );
   };
 
@@ -55,7 +56,7 @@ class App extends Component {
              
          <h2>Contacts</h2>
          <Filter onChange={this.handleChange} />
-         <ContactList contacts={this.getVisibleContacts()} deleteUser={this.deleteContact} />
+         <ContactList contacts={this.getFilteredContacts()} deleteUser={this.deleteContact} />
          
     </Container>
   );
